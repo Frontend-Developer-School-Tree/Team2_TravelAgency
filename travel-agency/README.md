@@ -1,3 +1,7 @@
+# Team2_TravelAgency
+Travel Agency - Developers { Federico Viola, Marco Cobucci, Leandro Luis de Souza Bispo, Luca Della Vecchia, Federica Segnan }
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
