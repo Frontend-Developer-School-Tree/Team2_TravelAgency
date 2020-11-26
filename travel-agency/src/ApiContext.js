@@ -6,23 +6,35 @@ const apiURL = "http://51.77.82.133:86/api/quotations/QUO_5fb3acb3a0f18";
 
 export const ApiStorage = ({ children }) => {
 
-  const [data, setData] = React.useState(null);
+  const [dataApi, setDataApi] = React.useState(null);
 
   React.useEffect(() => {
-    async function callApi() {
-      try {
-        const response = await fetch(apiURL);
-        const json = await response.json();
-        setData(json);
-        console.log(data);
-      } catch (error) {
-        console.error("ERROR API");
-      }
 
+    
+    async function callApi() {
+      const api = await fetch(apiURL)
+        .then(response => response.json())
+        setDataApi(api.results.data);
+        
+      console.log(dataApi);
+
+    //   // try {
+    //   //   // const response = await fetch(apiURL);
+    //   //   // const json = response.json();
+    //   //   // setData(json.results.data);
+    //   //   // console.log(json.results.data)
+    //   // } catch (error) {
+    //   //   console.error("ERROR API");
+    //   // }
+      
     }
 
-    callApi();
-  }, [data]);
+   callApi();
+  }, []);
 
-  return <ApiContext.Provider value={{data}}>{children}</ApiContext.Provider>;
+  return (
+    <ApiContext.Provider value={dataApi}>
+      {children}
+    </ApiContext.Provider>
+  );
 };

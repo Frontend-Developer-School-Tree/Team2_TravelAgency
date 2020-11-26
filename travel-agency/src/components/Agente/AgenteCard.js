@@ -1,13 +1,18 @@
 import React from "react";
 import { ApiContext } from "../../ApiContext";
+import { Nome } from "./AgenteCardStyles";
 
 const AgenteCard = () => {
-  const { data } = React.useContext(ApiContext);
-  console.log(data.results);
+  const dataApi = React.useContext(ApiContext);
+  console.log(dataApi);
+
+
 
   return (
     <div>
-      {/* <h2>{data.results.data.operator.name}</h2> */}
+      {/* <Nome>
+        <p>{dataApi.id}</p>
+      </Nome> */}
     </div>
   );
 };
