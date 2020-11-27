@@ -1,26 +1,33 @@
-import React from 'react'
-import AccordionInfo from '../AccordionInfo/AccordionInfo'
+import React from "react";
+import { ApiContext } from "../../../ApiContext";
+import AccordionInfo from "../AccordionInfo/AccordionInfo";
 
 const AccordionList = () => {
+  const dataApi = React.useContext(ApiContext);
+
   return (
     <div>
-      <AccordionInfo title="TARIFFE">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          Fugiat magnam eveniet corrupti quasi ex unde? Praesentium expedita molestias 
-          at impedit amet nulla optio tempora aspernatur, deserunt delectus, tempore quidem nihil.
-        </p>
+      <AccordionInfo title={dataApi.documentsRequested.name}>
+        <p>{dataApi.documentsRequested.description}</p>
       </AccordionInfo>
 
-      <AccordionInfo title="DOCUMENTI">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-          Fugiat magnam eveniet corrupti quasi ex unde? Praesentium expedita molestias 
-          at impedit amet nulla optio tempora aspernatur, deserunt delectus, tempore quidem nihil.
-        </p>
+      <AccordionInfo title={dataApi.documentsInsurance.name}>
+        <p>{dataApi.documentsInsurance.description}</p>
+      </AccordionInfo>
+
+      <AccordionInfo title={dataApi.documentsCancellation.name}>
+        <p>{dataApi.documentsCancellation.description}</p>
+      </AccordionInfo>
+
+      <AccordionInfo title={dataApi.documentsPayment.name}>
+        <p>{dataApi.documentsPayment.description}</p>
+      </AccordionInfo>
+
+      <AccordionInfo title={dataApi.documentsCarRental.name}>
+        <p>{dataApi.documentsCarRental.description}</p>
       </AccordionInfo>
     </div>
-  )
-}
+  );
+};
 
-export default AccordionList
+export default AccordionList;

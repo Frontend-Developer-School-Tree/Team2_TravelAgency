@@ -1,6 +1,5 @@
 import React from 'react'
 import "./App.css";
-import NavBar from "./components/Navbar/NavBar";
 import PhotoPrincipal from "./components/Navbar/PhotoPrincipal";
 import CardMaps from "./components/Maps/CardMaps";
 import AgenteCard from "./components/Agente/AgenteCard";
@@ -15,9 +14,9 @@ function App() {
     <div className="App">
     
       <ApiStorage>
-        {/* <PhotoPrincipal />
+        <PhotoPrincipal />
         <CardMaps />
-        <AgenteCard /> */}
+        <AgenteCard />
         <AccordionList />
       </ApiStorage>
 
