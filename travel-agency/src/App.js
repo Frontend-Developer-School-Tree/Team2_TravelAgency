@@ -5,6 +5,7 @@ import PhotoPrincipal from "./components/Navbar/PhotoPrincipal";
 import CardMaps from "./components/Maps/CardMaps";
 import AgenteCard from "./components/Agente/AgenteCard";
 import { ApiStorage } from "./ApiContext";
+import AccordionList from './components/Accordion/AccordionList/AccordionList';
 
 
 
@@ -14,9 +15,10 @@ function App() {
     <div className="App">
     
       <ApiStorage>
-        <PhotoPrincipal />
+        {/* <PhotoPrincipal />
         <CardMaps />
-        <AgenteCard />
+        <AgenteCard /> */}
+        <AccordionList />
       </ApiStorage>
 
     </div>
