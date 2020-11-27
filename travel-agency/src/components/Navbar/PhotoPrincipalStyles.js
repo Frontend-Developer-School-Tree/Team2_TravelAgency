@@ -28,8 +28,7 @@ export const ImgNav = styled.div`
 //     }`
 
 export const TextPres = styled.div`
-    text-align: right;
-    vertical-align: baseline;
+    text-align: center;
     padding-top: 30vh;
     padding-right: 3vh;
     @media (max-width: 720px){
