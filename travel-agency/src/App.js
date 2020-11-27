@@ -4,7 +4,7 @@ import NavBar from "./components/Navbar/NavBar";
 import PhotoPrincipal from "./components/Navbar/PhotoPrincipal";
 import CardMaps from "./components/Maps/CardMaps";
 import AgenteCard from "./components/Agente/AgenteCard";
-import { ApiContextProvider } from "./ApiContext";
+import { ApiStorage } from "./ApiContext";
 
 
 
@@ -13,11 +13,11 @@ function App() {
   return (
     <div className="App">
     
-      <ApiContextProvider>
+      <ApiStorage>
         <PhotoPrincipal />
         <CardMaps />
         <AgenteCard />
-      </ApiContextProvider>
+      </ApiStorage>
 
     </div>
   );
