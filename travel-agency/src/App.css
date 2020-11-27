@@ -1,30 +1,34 @@
-html body  {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-top: 0;
-    padding-top: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-html body div {
-    /* margin-top: 2rem; */
-    margin-bottom: 2rem;
+html {
+    font-size: 62.5%;
+}
+
+html body  {
+    font-size: 1.6rem;
+    margin:0;
 }
 
 html body .bckImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
     height:100vh;
     position:absolute;
     background-color:rgba(0, 0, 0, 0.4);
     z-index:9999;
     color: white;
-    margin-top: 0;
-    padding-top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+}
+
+.bckImg h3 {
+    margin: 0;
+    /* padding: 1%; */
 }
 
 html body .bckImg h1 {
@@ -64,9 +68,20 @@ html body .NavBarContainer nav {
 
 html body .NavBarContainer a {
     display: inline;
-    color: blue;
+    text-decoration: none;
+    color: #0d4ac8;
 }
 
 html body .NavBarContainer i {
-    color: blue;
+    color: #0d4ac8;
+}
+
+a:link {
+    text-decoration: none;
+    color: #0d4ac8;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #0d4ac8;
 }

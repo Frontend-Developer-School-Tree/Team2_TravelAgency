@@ -29,7 +29,7 @@ export const ImgNav = styled.div`
 
 export const TextPres = styled.div`
     text-align: center;
-    padding-top: 30vh;
+    padding-top: 15vh;
     padding-right: 3vh;
     @media (max-width: 720px){
         padding-top: 0;

@@ -1,17 +1,25 @@
 import React from 'react'
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faRoute, faMapMarkedAlt, faClipboardList, faPeace, faUserTie} from '@fortawesome/free-solid-svg-icons'
 const NavBar = (props) => {
+    const route = <FontAwesomeIcon icon = {faRoute}/>
+    const user = <FontAwesomeIcon icon = {faMapMarkedAlt}/>
+    const agente = <FontAwesomeIcon icon = {faUserTie}/>
+    const info = <FontAwesomeIcon icon = {faClipboardList}/>
     return (
         <div className="NavBarContainer">
             <nav className="">
                 <a href="" className="logo">
                     <img src={props.logo}/></a>
-                <a href=""><i className="fas fa-route"> Il mio tour</i></a>
-                <a href=""><i className="fas fa-map-marked-alt"> Mappa tour</i></a>
-                <a href=""><i className="fas fa-user-tie"> Agente</i></a>
-                <a href=""><i className="fas fa-clipboard-list"> Info tour</i></a>
+                <a href=""> {route} Il mio tour</a>
+                <a href=""> {user} Mappa tour</a>
+                <a href=""> {agente} Agente</a>
+                <a href="">{info} Info tour</a>
                 <button id="login"><i className="fas fa-user"> Login</i></button>
             </nav>
+            {/* npm i --save @fortawesome/fontawesome-svg-core
+            npm install --save @fortawesome/free-solid-svg-icons
+            npm install --save @fortawesome/react-fontawesome */}
         </div>
     )
 }

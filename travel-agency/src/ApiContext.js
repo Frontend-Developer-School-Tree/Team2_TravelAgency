@@ -15,7 +15,8 @@ export const ApiStorage = ({ children }) => {
       const api = await fetch(apiURL).then(response => response.json())
       
       setDataApi(api.results.data);
-      setLoad(true); 
+      setLoad(true);
+      console.log("state ", api.results.data); 
 
     } callApi();
   }, []); 
