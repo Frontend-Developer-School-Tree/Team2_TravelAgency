@@ -1,20 +1,15 @@
 import React from "react";
-import { ApiContext } from "../../ApiContext";
-import { Nome } from "./AgenteCardStyles";
+import ApiContext from "../../ApiContext";
 
 const AgenteCard = () => {
-  const dataApi = React.useContext(ApiContext);
-  console.log(dataApi);
 
-
-
-  return (
-    <div>
-      {/* <Nome>
-        <p>{dataApi.id}</p>
-      </Nome> */}
-    </div>
+  return ( 
+    <ApiContext.Consumer>
+      {value => (
+          <div style={{backgroundColor: "green"}}>{value.operator.name}</div>
+        )}
+    </ApiContext.Consumer>
   );
 };
 
-export default AgenteCard;
+export default AgenteCard
