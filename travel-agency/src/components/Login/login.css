@@ -17,6 +17,7 @@
     width: 10rem;
     height: 5rem;
 }
+
 .btnLogin:hover {
     width: 11rem;
     height: 6rem;  
@@ -24,6 +25,7 @@
     -moz-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
     box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
 }
+
 label {
     display: block;
     margin: 1rem;

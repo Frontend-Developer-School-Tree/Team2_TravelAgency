@@ -1,6 +1,7 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faRoute, faMapMarkedAlt, faClipboardList, faUserTie, faUser} from '@fortawesome/free-solid-svg-icons'
+import { Link, NavLink } from 'react-router-dom'
 const NavBar = (props) => {
     const route = <FontAwesomeIcon icon = {faRoute}/>
     const user = <FontAwesomeIcon icon = {faMapMarkedAlt}/>
@@ -11,12 +12,12 @@ const NavBar = (props) => {
     return (
         <div className="NavBarContainer">
             <nav className="">
-                <a href="" className="logo">
-                    <img src={props.logo}/></a>
-                <a href=""> {route} Il mio tour</a>
-                <a href=""> {user} Mappa tour</a>
-                <a href=""> {agente} Agente</a>
-                <a href=""> {info} Info tour</a>
+                <NavLink to='/homepage' className="logo">
+                    <img src={props.logo}/></NavLink>
+                <NavLink to='/maps'> {route} Il mio tour</NavLink>
+                <NavLink to='maps'> {user} Mappa tour</NavLink>
+                {/* <a href=""> {agente} Agente</a> */}
+                <NavLink to='infotour'> {info} Info tour</NavLink>
                 <button id="login"> {login} Login</button>
             </nav>
             {/* npm i --save @fortawesome/fontawesome-svg-core
