@@ -21,6 +21,12 @@ function App() {
         <AgenteCard />
         <AccordionList />
       </ApiStorage> */}
+        <div className="clear"></div>
+          {/* <CardMaps /> */}
+          <AgenteCard />
+          <AccordionList />
+        
+      </ApiStorage>
 
     </div>
   );

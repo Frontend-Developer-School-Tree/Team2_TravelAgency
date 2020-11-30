@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 import terrazza from "../../img/terrazza.svg";
 
-export const ImgNav = styled.div`
-        background-image: url(${terrazza});
-        background-repeat:no-repeat;
-        background-position:center;
-        width:100%;
-        height: 85vh;
-        position:absolute;
-        z-index:1; 
-        @media (max-width: 720px){
-            /* background-image:none; */
-        }`
+// export const ImgNav = styled.div`
+//         background-image: url(${terrazza});
+//         background-repeat:no-repeat;
+//         background-position:center;
+//         width:100%;
+//         height: 85vh;
+//         position:absolute;
+//         z-index:1; 
+//         @media (max-width: 720px){
+//             /* background-image:none; */
+//         }`
         
 // export const SfondoBlack = styled.div`
 //         width: 100%;

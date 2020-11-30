@@ -2,27 +2,28 @@ import React from 'react'
 import logo from '../../img/logo.svg'
 import Btn from '../Button/Btn'
 import { ImgNav, Logo, SfondoBlack, TextPres } from "./PhotoPrincipalStyles";
-import {ApiContext} from "../../ApiContext";
+import { ApiContext } from "../../ApiContext";
 import NavBar from './NavBar';
 
 
 const PhotoPrincipal = () => {
 
     const dataApi = React.useContext(ApiContext);
-    
+
     return (
-        <div style={{padding:0}}>
-            <ImgNav />
+        <div style={{ padding: 0 }}>
             <div className="bckImg">
-                {/* <Logo src={logo} /> */}
-                <NavBar logo={logo}/>
-                <TextPres>
-                    <h1>
-                        PER {dataApi.customerName} <br />
-                        {dataApi.title}
-                    </h1>
-                    <Btn title="SCOPRI DI PIU'" />
-                </TextPres>
+                <div className="overbgImg">
+                    {/* <Logo src={logo} /> */}
+                    <NavBar logo={logo} />
+                    <TextPres>
+                        <h1>
+                            Per {dataApi.customerName} <br />
+                            {dataApi.title}
+                        </h1>
+                        <Btn title="SCOPRI DI PIU'" />
+                    </TextPres>
+                </div>
             </div>
             {/* <SfondoBlack> */}
             {/* </SfondoBlack> */}
