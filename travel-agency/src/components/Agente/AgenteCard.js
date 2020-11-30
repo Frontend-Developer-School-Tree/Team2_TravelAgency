@@ -2,7 +2,6 @@ import React from "react";
 import {ApiContext} from "../../ApiContext";
 
 const AgenteCard = () => {
-  
   const dataApi = React.useContext(ApiContext);
 
   return ( 
@@ -10,10 +9,10 @@ const AgenteCard = () => {
       {/* <img src={dataApi.operator.image}/> */}
       <>
         <h2>{dataApi.operator.name}</h2>
-        <h3>descriz</h3>
-        <p>{dataApi.operator.phone}</p>
-        <i>{dataApi.operator.email}</i>
-        <i>{dataApi.operator.address}</i>
+        <h3>descrizione</h3>
+        <p>{dataApi.operator.contact.phone}</p>
+        <p>{dataApi.operator.contact.email}</p>
+        <p>{dataApi.operator.contact.address}</p>
         
       </>
       {/* {value => (

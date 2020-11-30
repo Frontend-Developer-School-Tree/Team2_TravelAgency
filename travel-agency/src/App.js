@@ -15,17 +15,17 @@ function App() {
     <div className="App">
 
       <ApiStorage>
-        {/* <PhotoPrincipal /> */}
-        {/* <div className="clear"></div> */}
+        {/* <PhotoPrincipal />
+        <div className="clear"></div> */}
 
       
-      <Login/>
-      {/* <ApiStorage>
+      {/* <Login/> */}
+      <ApiStorage>
         <PhotoPrincipal />
-        <CardMaps />
+        {/* <CardMaps /> */}
         <AgenteCard />
         <AccordionList />
-      </ApiStorage> */}
+      </ApiStorage>
         <div className="clear"></div>
 
           {/* <CardMaps /> */}
