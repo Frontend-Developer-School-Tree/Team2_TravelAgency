@@ -15,9 +15,11 @@ function App() {
     
       <ApiStorage>
         <PhotoPrincipal />
-        <CardMaps />
-        <AgenteCard />
-        <AccordionList />
+        <div className="clear"></div>
+          {/* <CardMaps /> */}
+          <AgenteCard />
+          <AccordionList />
+        
       </ApiStorage>
 
     </div>
