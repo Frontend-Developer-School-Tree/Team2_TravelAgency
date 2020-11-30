@@ -14,11 +14,11 @@ function App() {
     <div className="App">
     
       <ApiStorage>
-        <PhotoPrincipal />
-        <div className="clear"></div>
+        {/* <PhotoPrincipal /> */}
+        {/* <div className="clear"></div> */}
           {/* <CardMaps /> */}
-          <AgenteCard />
-          <AccordionList />
+          {/* <AgenteCard />
+          <AccordionList /> */}
         
       </ApiStorage>
 

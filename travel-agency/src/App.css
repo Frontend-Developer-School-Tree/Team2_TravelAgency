@@ -2,7 +2,6 @@
 *{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    overflow: auto;
 }
 
 html {
@@ -30,6 +29,7 @@ html body .bckImg {
     height:100vh;
     background-color:rgba(0, 0, 0, 0.5);
     z-index: 9;
+    padding-top: 30vh;
 }
 /* .bckImg::after {
     clear: both;
@@ -66,7 +66,6 @@ html body .NavBarContainer{
     border-radius: 25px;
     z-index: 99;
     margin: auto;
-    margin-top: 30vh;
 }
 
 html body .NavBarContainer nav {
