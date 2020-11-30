@@ -7,34 +7,45 @@ import { ApiStorage } from "./ApiContext";
 import AccordionList from './components/Accordion/AccordionList/AccordionList';
 import Login from './components/Login/Login';
 
+import {
+        BrowserRouter as Router,
+        Switch,
+        Route,
+        Link
+        } from 'react-router-dom';
 
 
 function App() {
 
   return (
-    <div className="App">
-
-      <ApiStorage>
-        {/* <PhotoPrincipal /> */}
-        {/* <div className="clear"></div> */}
-
-      
-      <Login/>
-      {/* <ApiStorage>
-        <PhotoPrincipal />
-        <CardMaps />
-        <AgenteCard />
-        <AccordionList />
-      </ApiStorage> */}
-        <div className="clear"></div>
-
-          {/* <CardMaps /> */}
-          {/* <AgenteCard />
-          <AccordionList /> */}
-        
-      </ApiStorage>
-
-    </div>
+    
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="./components/Login/Login.js">Login</Link>
+            </li>
+            <li>
+              <Link to="./components/Navbar/NavBar.js">Home</Link>
+            </li>
+          </ul>
+        <Switch>
+          <Route path="./components/Navbar/NavBar.js">
+            <ApiStorage>
+              <PhotoPrincipal />
+              <CardMaps />
+              <AgenteCard />
+              <AccordionList />
+            </ApiStorage>
+          </Route>
+          <Route path="./components/Login/Login.js">
+            <Login/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+    
   );
 }
 
