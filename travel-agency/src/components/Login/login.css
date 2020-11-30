@@ -1,0 +1,9 @@
+
+.loginContainer {
+    background-color: cadetblue;
+    display: block;
+    flex-direction: row;
+    margin-top: 30vh;
+    margin: 15em 15rem;
+}
+
