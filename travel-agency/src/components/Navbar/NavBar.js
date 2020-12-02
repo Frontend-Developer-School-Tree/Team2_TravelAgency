@@ -1,7 +1,7 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faRoute, faMapMarkedAlt, faClipboardList, faUserTie, faUser} from '@fortawesome/free-solid-svg-icons'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import  AuthApi  from "../Login/ProtectRoutes/AuthApi";
 import Cookies from "js-cookies";
 
@@ -17,7 +17,7 @@ const NavBar = (props) => {
     const Auth = React.useContext(AuthApi)
 	const handleOnClick = () => {
 	 Auth.setAuth(false);
-	 Cookies.remove("user")
+	 Cookies.removeItem("user")
 	}
 
     return (
@@ -31,9 +31,7 @@ const NavBar = (props) => {
                 <NavLink to='infotour'> {info} Info tour</NavLink>
                 <button id="login" onClick={handleOnClick}> {login} Logout</button>
             </nav>
-            {/* npm i --save @fortawesome/fontawesome-svg-core
-            npm install --save @fortawesome/free-solid-svg-icons
-            npm install --save @fortawesome/react-fontawesome */}
+           
         </div>
     )
 }

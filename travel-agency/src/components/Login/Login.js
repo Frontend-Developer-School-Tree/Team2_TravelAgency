@@ -29,11 +29,12 @@ function Login({ mychanges = () => {} }) {
     event.preventDefault();
     console.log("event ", mail, " ", password);
     /** creare auth to provider **/
-
-    if ( mail === user.username && password === user.password) {
-        Auth.setAuth(true);
-        Cookies.set("user", "loginTrue");
-    }
+    Auth.setAuth(true);
+    Cookies.setItem("user", "loginTrue");
+    // if ( mail === user.username && password === user.password) {
+    //     Auth.setAuth(true);
+    //     Cookies.setItem("user", "loginTrue");
+    // }
     
   };
 

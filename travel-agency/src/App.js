@@ -10,60 +10,54 @@ import Login from "./components/Login/Login";
 import Cookies from "js-cookies";
 import AuthApi from "./components/Login/ProtectRoutes/AuthApi";
 
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-// import ProtectedRoute from "./components/Login/ProtectRoutes/ProtectedRoute";
-// import ProtectedLogin from "./components/Login/ProtectRoutes/ProtectedLogin";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ProtectedRoute from "./components/Login/ProtectRoutes/ProtectedRoute";
+import ProtectedLogin from "./components/Login/ProtectRoutes/ProtectedLogin";
 import Routes from "./components/Login/ProtectRoutes/Routes";
+import Homepage from "./pages/Homepage";
 
 function App() {
+  const Auth = React.useContext(AuthApi);
   const [auth, setAuth] = React.useState(false);
 
   const readCookies = () => {
-    const user = Cookies.get("user");
+    const user = Cookies.getItem("user");
     if (user) {
       setAuth(true);
     }
   };
 
   React.useEffect(() => {
-    const ac = new AbortController();
     readCookies();
-    return () => ac.abort();
   }, []);
 
   return (
     <div className="App">
-      {/* <ApiStorage> */}
-      {/* <PhotoPrincipal />
-        <div className="clear"></div> */}
-
-      {/* <Login/> */}
-      {/* <ApiStorage> */}
-      {/* <PhotoPrincipal /> */}
-      {/* <CardMaps /> */}
-      {/* <AgenteCard />
-        <AccordionList />
-      </ApiStorage> */}
-
-      {/* <CardMaps /> */}
-      {/* <AgenteCard />
-          <AccordionList /> */}
-
-      {/* </ApiStorage> */}
-
       <Router>
         <div>
           <AuthApi.Provider value={{ auth, setAuth }}>
             <ApiStorage>
               <Switch>
+                <ProtectedLogin
+                  exact
+                  path="/"
+                  auth={auth}
+                  component={Login}
+                />
+                <ProtectedRoute
+                  path="/homepage"
+                  auth={auth}
+                  component={Homepage}
+                />
+                
 
-                <Routes>
+                {/* <Routes>
                   <Login />
                   <PhotoPrincipal />
                   <AgenteCard />
-                </Routes>
+                </Routes> */}
 
-                <Route path="/maps">
+                {/* <Route path="/maps">
                   <PhotoPrincipal />
                   <AgenteCard />
                   <CardMaps />
@@ -72,7 +66,7 @@ function App() {
                   <PhotoPrincipal />
                   <AgenteCard />
                   <AccordionList />
-                </Route>
+                </Route> */}
               </Switch>
             </ApiStorage>
           </AuthApi.Provider>
