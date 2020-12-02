@@ -6,6 +6,8 @@ import AgenteCard from "./components/Agente/AgenteCard";
 import { ApiStorage } from "./ApiContext";
 import AccordionList from './components/Accordion/AccordionList/AccordionList';
 import Login from './components/Login/Login';
+import { useCookies } from 'react-cookie';
+
 
 import {
   BrowserRouter as Router,
@@ -16,6 +18,12 @@ import {
 
 
 function App() {
+
+  const [cookies, setCookie, removeCookie] = useCookies(['']);
+
+  function checkLogin(name){
+    console.log("cookie ", name);
+  }
 
   return (
 
@@ -44,36 +52,26 @@ function App() {
 
       <Router>
         <div>
-          {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Login</Link>
-            </li>
-            <li>
-              <Link to="/homepage">Home</Link>
-            </li>
-          </ul>
-          </nav> */}
+
           <ApiStorage>
             <Switch>
               <Route exact path="/">
-                <Login />
+                <Login onChange={checkLogin}/>
               </Route>
-              <Route path="/homepage">
-                <PhotoPrincipal />
-                <AgenteCard />
-              </Route>
-              <Route path='/maps'>
-                <PhotoPrincipal />
-                <AgenteCard />
-                <CardMaps />
-              </Route>
-              <Route path='/infotour'>
-                <PhotoPrincipal />
-                <AgenteCard />
-                <AccordionList />
-              </Route>
-
+                <Route path="/homepage">
+                  <PhotoPrincipal />
+                  <AgenteCard />
+                </Route>
+                <Route path='/maps'>
+                  <PhotoPrincipal />
+                  <AgenteCard />
+                  <CardMaps />
+                </Route>
+                <Route path='/infotour'>
+                  <PhotoPrincipal />
+                  <AgenteCard />
+                  <AccordionList />
+                </Route>
             </Switch>
           </ApiStorage>
         </div>
