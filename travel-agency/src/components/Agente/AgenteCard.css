@@ -1,0 +1,32 @@
+.info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    margin: 5vh 10vh;
+    width: auto;
+    border: 1px solid gray;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
+    font-size: 1.3rem;
+}
+
+hr {
+    margin: 1rem;
+}
+
+.agentImg {
+    padding: 5vh 5vh;
+    height: auto;
+    width: 50vh;
+}
+
+.operatorInfo {
+    margin-right: 12rem;
+}
+
+.companyInfo {
+    margin-top: 1rem;
+}
