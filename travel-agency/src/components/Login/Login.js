@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import "./login.css";
 import logo from "../../img/logo.svg";
-import Cookies from "js-cookies";
-import AuthApi from "../Login/ProtectRoutes/AuthApi";
 import { ApiContext } from "../../ApiContext";
 import { Navigate } from "react-router-dom";
 
 const user = { username: `admin`, password: `admin` };
 
-function Login({ mychanges = () => {} }) {
+function Login() {
   const [mail, setMail] = useState("");
   const [password, setpassword] = useState("");
 
@@ -28,12 +26,9 @@ function Login({ mychanges = () => {} }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("event ", mail, " ", password);
-    /** creare auth to provider **/
-
-    if ( mail === user.username && password === user.password) {
-        userLogin();
+    if (mail === user.username && password === user.password) {
+      userLogin();
     }
-    
   };
 
   if (login === true) return <Navigate to="/homepage" />;
@@ -60,8 +55,7 @@ function Login({ mychanges = () => {} }) {
               onChange={handleChange}
             />
           </form>
-          <button type="submit" className="btnLogin" onClick={handleSubmit}>
-            {/* <Link to='/homepage'> Login</Link> */}
+          <button type="submit" className="btnLogin" onClick={userLogin}>
             Login
           </button>
         </div>

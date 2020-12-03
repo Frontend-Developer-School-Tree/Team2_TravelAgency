@@ -8,24 +8,22 @@ const apiURL = "http://51.77.82.133:86/api/quotations/QUO_5fb3acb3a0f18";
 export const ApiStorage = ({ children }) => {
   const [dataApi, setDataApi] = React.useState(null);
   const [load, setLoad] = React.useState(false);
-  const [login, setLogin] = React.useState(null);
+  const [login, setLogin] = React.useState(false);
   const navigate = useNavigate();
 
   const userLogout = React.useCallback(
-    async function() {
-    // ApiContext.setAuth(false);
-    Cookies.removeItem("user");
-    setLogin(false);
-    navigate("/")
-  },
-  [navigate]
-  
+    async function () {
+      Cookies.removeItem("user");
+      setLogin(false);
+      navigate("/");
+    },
+    [navigate]
   );
 
   async function userLogin() {
     Cookies.setItem("user", "loginTrue");
     setLogin(true);
-  };
+  }
 
   const readCookies = () => {
     const user = Cookies.getItem("user");
@@ -49,7 +47,9 @@ export const ApiStorage = ({ children }) => {
   return (
     <>
       {load && (
-        <ApiContext.Provider value={{dataApi, userLogin, userLogout, load, login}}>
+        <ApiContext.Provider
+          value={{ dataApi, userLogin, userLogout, load, login }}
+        >
           {children}
         </ApiContext.Provider>
       )}

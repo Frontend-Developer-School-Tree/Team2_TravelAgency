@@ -1,13 +1,14 @@
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
 
-// const ProtectedRoute = ({ auth, component: Component, ...rest }) => {
-//   return (
-//     <Route
-//       {...rest}
-//       render={() => (auth ? <Component /> : <Redirect to="/" />)}
-//     />
-//   );
-// };
+import { Navigate, Route } from "react-router-dom";
+import { ApiContext } from "../../../ApiContext";
 
-// export default ProtectedRoute;
+const ProtectedRouteTest = (props) => {
+  const { login } = React.useContext(ApiContext);
+
+  if (login === true) return <Route {...props} />;
+  else if (login === false) return <Navigate to="/login" />;
+  else return null;
+};
+
+export default ProtectedRouteTest;
