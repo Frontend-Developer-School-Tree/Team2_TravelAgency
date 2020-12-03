@@ -2,16 +2,22 @@ import React from 'react'
 import { ApiContext } from '../../ApiContext';
 import CardItem from './CardItem';
 
+/**
+ * titolo riga.places[0].name
+ */
+
 function CardList() {
     const { dataApi } = React.useContext(ApiContext);
 
     dataApi.rows.map( riga => {
-        console.log(riga.places[0].name);
+        console.log(riga);
         
     })
-
+    
     return (
-        <h1>Hello </h1>
+        <CardItem titolo={"SIRACUSA"} luogo={"SIRACUSA"} nome={"days.name"} data={"dayDate"}
+ 
+        />
     )
 }
 
