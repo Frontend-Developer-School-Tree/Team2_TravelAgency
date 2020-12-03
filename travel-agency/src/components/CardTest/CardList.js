@@ -16,7 +16,7 @@ function CardList() {
     
     return (
         <CardItem titolo={"SIRACUSA"} luogo={"SIRACUSA"} nome={"days.name"} data={"dayDate"}
- 
+            
         />
     )
 }

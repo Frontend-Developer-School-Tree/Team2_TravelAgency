@@ -11,7 +11,7 @@ const AgenteCard = () => {
   const mail = <FontAwesomeIcon icon = {faEnvelope}/>
   const address = <FontAwesomeIcon icon = {faHome}/>
 
-  const dataApi = React.useContext(ApiContext);
+  const { dataApi } = React.useContext(ApiContext);
 
   return ( 
     <div className="info">
@@ -19,15 +19,15 @@ const AgenteCard = () => {
       <div className="operatorInfo">
         <h2>{dataApi.operator.name}</h2>
         <h5>Il tuo agente di viaggio</h5>
-        <p>{phone}  {dataApi.operator.contact.phone}</p>
-        <p>{mail} {dataApi.operator.contact.email}</p>
+        <p>{phone}  <a href="tel:">{dataApi.operator.contact.phone}</a></p>
+        <p>{mail} <a href="mailto:">{dataApi.operator.contact.email}</a></p>
         <p>{address} {dataApi.operator.contact.address}</p>
         
       </div>
       <hr></hr>
       <div className="companyInfo">
         <img src={logo} alt="logo"/>
-        {/* Non ho trovato le info nella api e le ho copiate  */}
+        {/* Non ho trovato le info nella api e le messe statiche*/}
         <p>- Insolita Travels di InSicilia snc: Tour Operator Sicilia, DMC e Agenzia di Viaggi;</p>
         <p>- Licenza Agenzia Viaggio nr. 2226/S2-TUR della Regione Siciliana;</p>
         <p>- Polizza R.C. nr. 45130310-RC14 Europaische Reiserversicherung AG;</p>

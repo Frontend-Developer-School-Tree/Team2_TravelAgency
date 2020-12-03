@@ -1,15 +1,19 @@
-/* import styled from 'styled-components'
-
-export const Container = styled.div`
-    width: 80%;
-    padding: 0 20%;
-    height: 50vh;
-    background-color: black;
-    @media (max-width: 720px) {
-        padding: 0;
-    }
-` */
+.mapCard {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5vh 10vh;
+    border: 1px solid gray;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
+    font-size: 1.4rem;
+}
 
 .map {
+    margin: 3vh;
     height: 50vh;
+    width: 150vh;
+
 }
