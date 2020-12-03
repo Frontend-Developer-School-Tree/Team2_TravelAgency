@@ -9,7 +9,7 @@ const Homepage = () => {
     <section>
       <Header />
       <Routes>
-        <Route path="maps" element={<CardMaps />} />
+        <Route path="mappa" element={<CardMaps />} />
         <Route path="infotour" element={<AccordionList />} />
       </Routes>
     </section>

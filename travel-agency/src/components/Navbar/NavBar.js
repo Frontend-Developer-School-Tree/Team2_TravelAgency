@@ -11,7 +11,7 @@ import { ApiContext } from "../../ApiContext";
 
 const NavBar = (props) => {
   const route = <FontAwesomeIcon icon={faRoute} />;
-  const user = <FontAwesomeIcon icon={faMapMarkedAlt} />;
+  const marker = <FontAwesomeIcon icon={faMapMarkedAlt} />;
   const info = <FontAwesomeIcon icon={faClipboardList} />;
   const login = <FontAwesomeIcon icon={faUser} />;
 
@@ -23,7 +23,8 @@ const NavBar = (props) => {
         <NavLink to="/homepage" className="logo">
           <img alt="img logo" src={props.logo} />
         </NavLink>
-        <NavLink to="/homepage/maps">{route} Il mio tour</NavLink>
+        <NavLink to="/homepage/mappa">{marker} Mappa</NavLink>
+        <NavLink to="/homepage/miotour">{route} Il mio tour</NavLink>
         <NavLink to="/homepage/infotour">{info} Info tour</NavLink>
         <button id="login" onClick={userLogout}>
           {login} Logout
