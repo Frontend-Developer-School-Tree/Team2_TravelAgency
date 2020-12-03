@@ -3,15 +3,16 @@ import "./login.css";
 import logo from "../../img/logo.svg";
 import Cookies from "js-cookies";
 import AuthApi from "../Login/ProtectRoutes/AuthApi";
+import { ApiContext } from "../../ApiContext";
+import { Navigate } from "react-router-dom";
 
-const user = { username: `admin`, password: `admin` }
-
+const user = { username: `admin`, password: `admin` };
 
 function Login({ mychanges = () => {} }) {
   const [mail, setMail] = useState("");
   const [password, setpassword] = useState("");
 
-  const Auth = React.useContext(AuthApi);
+  const { userLogin, login } = React.useContext(ApiContext);
 
   function handleChange(event) {
     const name = event.target.name;
@@ -22,22 +23,20 @@ function Login({ mychanges = () => {} }) {
     if (name === "password") {
       setpassword({ password: value });
     }
-
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("event ", mail, " ", password);
     /** creare auth to provider **/
-    Auth.setAuth(true);
-    Cookies.setItem("user", "loginTrue");
-    // if ( mail === user.username && password === user.password) {
-    //     Auth.setAuth(true);
-    //     Cookies.setItem("user", "loginTrue");
-    // }
+
+    if ( mail === user.username && password === user.password) {
+        userLogin();
+    }
     
   };
 
+  if (login === true) return <Navigate to="/homepage" />;
   return (
     <>
       <div className="loginContainer">

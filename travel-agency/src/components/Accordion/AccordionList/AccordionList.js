@@ -3,7 +3,7 @@ import { ApiContext } from "../../../ApiContext";
 import AccordionInfo from "../AccordionInfo/AccordionInfo";
 
 const AccordionList = () => {
-  const dataApi = React.useContext(ApiContext);
+  const {dataApi} = React.useContext(ApiContext);
 
   return (
     <div>
