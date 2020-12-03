@@ -11,5 +11,5 @@ export const Container = styled.div`
 ` */
 
 .map {
-    height: 100vh;
+    height: 50vh;
 }
