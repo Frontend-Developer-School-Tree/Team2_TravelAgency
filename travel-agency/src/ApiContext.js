@@ -38,7 +38,7 @@ export const ApiStorage = ({ children }) => {
 
       setDataApi(api.results.data);
       setLoad(true);
-      console.log("state ", api.results.data);
+      // console.log("state ", api.results.data);
     }
     callApi();
     readCookies();
