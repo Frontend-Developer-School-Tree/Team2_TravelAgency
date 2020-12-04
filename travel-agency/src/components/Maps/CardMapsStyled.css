@@ -17,3 +17,14 @@
     width: 150vh;
 
 }
+
+.TitoloMaps {
+    text-transform: uppercase;
+    color:orange;
+    font-weight: 500;
+}
+
+div.mapCard p {
+    color: grey;
+    
+}

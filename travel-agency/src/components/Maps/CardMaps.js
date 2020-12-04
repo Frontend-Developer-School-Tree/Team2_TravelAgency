@@ -2,12 +2,21 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./CardMapsStyled.css";
 import { ApiContext } from "../../ApiContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight
+} from "@fortawesome/free-solid-svg-icons";
+
+
+
 
 const CardMaps = () => {
+  
   const { dataApi } = React.useContext(ApiContext);
+  
 
   const mapPositions = [41.2925, 12.5736];
-
+  const arrow = <FontAwesomeIcon icon={faArrowRight} style={{color:"orange"}} />;
   const resultAdult = dataApi.partecipants.filter((elem) => {
     if (elem.type === "adulto") return true;
   });
@@ -49,12 +58,12 @@ const CardMaps = () => {
           )}
         </MapContainer>
 
-        <h2>{dataApi.title}</h2>
-        <p>
-          Dal {dataApi.dateFrom} al {dataApi.dateTo}
+        <h2  className="TitoloMaps">{dataApi.title}</h2>
+        
+          <p> {arrow} Dal {dataApi.dateFrom} al {dataApi.dateTo}
         </p>
-        <p>{resultAdole.length} adolescenti / {resultAdult.length} adulti</p>
-        <p>{dataApi.days} Giorni / {dataApi.days - 1} Notti</p>
+        <p>{arrow} {resultAdole.length} adolescenti / {arrow} {resultAdult.length} adulti</p>
+        <p>{arrow} {dataApi.days} Giorni / {dataApi.days - 1} Notti</p>
       </section>
     </div>
   );
