@@ -4,11 +4,13 @@ import { Routes, Route } from "react-router-dom";
 import CardMaps from "../Maps/CardMaps";
 import AccordionList from "../Accordion/AccordionList/AccordionList";
 import CardList from "../CardTest/CardList";
+import AgenteCard from "../Agente/AgenteCard";
 
 const Homepage = () => {
   return (
     <section>
       <Header />
+      <AgenteCard/>
       <Routes>
         <Route path="mappa" element={<CardMaps />} />
         <Route path="miotour" element={<CardList/>} />

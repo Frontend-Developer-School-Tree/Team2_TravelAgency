@@ -10,7 +10,7 @@
     -webkit-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
     -moz-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
     box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 hr {
@@ -29,4 +29,5 @@ hr {
 
 .companyInfo {
     margin-top: 1rem;
+    margin-left: 2rem;
 }
