@@ -13,7 +13,7 @@ function Footer() {
             <div>
                 <p>Insolita Travels | Sicily DMC & Travel Agency (Licence nr. 2226/S2-Tur)</p>
                 <p>Viale della Gioventù, 26 A -95014 Giarre (Catania)</p>
-                <img src={logo}/>
+                <img src={logo} alt="logo"/>
             </div>
             <div >
                 <button>{download}  Download</button>

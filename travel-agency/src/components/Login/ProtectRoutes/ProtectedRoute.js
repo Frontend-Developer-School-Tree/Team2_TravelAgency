@@ -7,7 +7,7 @@ const ProtectedRouteTest = (props) => {
   const { login } = React.useContext(ApiContext);
 
   if (login === true) return <Route {...props} />;
-  else if (login === false) return <Navigate to="/login" />;
+  else if (login === false) return <Navigate to="/" />;
   else return null;
 };
 

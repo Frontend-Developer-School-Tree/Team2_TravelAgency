@@ -23,10 +23,12 @@ function Login() {
     }
   }
 
-  const handleSubmit = (event) => {
+  const checkCredential = (event) => {
     event.preventDefault();
-    console.log("event ", mail, " ", password);
+    console.log(" bool ", mail === user.username && password === user.password)
+    /** è il controllo che da sempre false */
     if (mail === user.username && password === user.password) {
+      console.log("mail ", mail, " password ", password);
       userLogin();
     }
   };
@@ -39,7 +41,7 @@ function Login() {
           <img src={logo} alt="logo" />
         </div>
         <div className="loginformdiv">
-          <form onSubmit={handleSubmit} noValidate className="loginform">
+          <form onSubmit={checkCredential} noValidate className="loginform">
             <label>Email</label>
             <input
               type="email"
@@ -55,7 +57,7 @@ function Login() {
               onChange={handleChange}
             />
           </form>
-          <button type="submit" className="btnLogin" onClick={userLogin}>
+          <button type="submit" className="btnLogin" onClick={checkCredential}>
             Login
           </button>
         </div>
