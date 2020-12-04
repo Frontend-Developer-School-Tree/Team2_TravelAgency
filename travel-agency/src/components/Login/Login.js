@@ -27,7 +27,7 @@ function Login() {
     event.preventDefault();
     console.log(" bool ", mail === user.username && password === user.password)
     /** è il controllo che da sempre false */
-    if (mail === user.username && password === user.password) {
+    if (mail.mail === user.username && password.password === user.password) {
       console.log("mail ", mail, " password ", password);
       userLogin();
     }
