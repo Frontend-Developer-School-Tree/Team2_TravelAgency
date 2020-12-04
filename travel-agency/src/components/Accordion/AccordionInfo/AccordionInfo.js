@@ -14,7 +14,7 @@ const AccordionInfo = ({ children, title, isExpand = false }) => {
       </div>
       {expand && <div className="content">{children}</div>}
     </div>
-  )
+  ) 
 };
 
 export default AccordionInfo;
