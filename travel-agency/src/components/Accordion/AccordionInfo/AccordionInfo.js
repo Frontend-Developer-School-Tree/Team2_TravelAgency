@@ -13,7 +13,10 @@ const AccordionInfo = ({ children, title, isExpand = false }) => {
     <div className="box">
       <div className="title-box" onClick={() => setExpand(expand => !expand)}>
         <span className="title">{title}</span>
-        <span className="icon"><span className="icona">{angle}</span><i className={`${!expand ? ' down' : ''}`}></i></span>
+        <span className="icon">
+          <span className="icona">{angle}</span>
+          <i className={`${!expand ? ' down' : ''}`}></i>
+          </span>
         <div className="clearfix"></div>
       </div>
       {expand && <div className="content">{children}</div>}

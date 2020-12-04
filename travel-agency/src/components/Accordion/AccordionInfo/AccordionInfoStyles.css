@@ -3,7 +3,6 @@
 }
 
 .box {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +15,8 @@
   -moz-box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
   box-shadow: 10px 11px 5px 0px rgba(0,0,0,0.25);
   font-size: 1.4rem;
-  
+  background-color: #fff;
+
 }
 .title-box {
   cursor: pointer;
@@ -46,6 +46,11 @@
 .content {
   padding: 15px;
   border-top: 1px solid #ddd;
+  text-align: left;
+}
+
+.content>p {
+  margin-right: 22rem;
 }
 
 .accortionList .title {
@@ -56,7 +61,6 @@
 
 .icona:active{
   transform: rotate(180deg);
-  -ms-transform: rotate(180deg);	 /* for IE  */
-  /*  for browsers supporting webkit (such as chrome, safari etc.). */
+  -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
 }

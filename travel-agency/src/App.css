@@ -11,6 +11,8 @@ html {
 html body  {
     font-size: 1.6rem;
     margin:0;
+    background-color: #E5E5E5;
+
 }
 
 html body .bckImg {

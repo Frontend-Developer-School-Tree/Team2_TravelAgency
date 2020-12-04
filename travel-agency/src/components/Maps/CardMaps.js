@@ -16,7 +16,7 @@ const CardMaps = () => {
   const { dataApi } = React.useContext(ApiContext);
   
 
-  const mapPositions = [41.2925, 12.5736];
+  const mapPositions = [37.45, 14.15];
   const arrow = <FontAwesomeIcon icon={faArrowRight} style={{color:"orange"}} />;
 
   const resultAdult = dataApi.partecipants.filter((elem) => {
@@ -33,7 +33,7 @@ const CardMaps = () => {
         <MapContainer
           className="map"
           center={[mapPositions[0], mapPositions[1]]}
-          zoom={5}
+          zoom={7}
         >
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -51,7 +51,7 @@ const CardMaps = () => {
                   ]}
                 >
                   <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    {places.name.toUpperCase()}
                   </Popup>
                 </Marker>
               );
@@ -60,7 +60,7 @@ const CardMaps = () => {
         </MapContainer>
               
         <h2  className="TitoloMaps">{dataApi.title}</h2>
-          {itinerario.map( place => <strong >{place} {' > '}</strong>)}
+          {itinerario.map( place => <strongs >{place} {' > '}</strongs>)}
           <p> {arrow} Dal {dateFormat(dataApi.dateFrom)} al {dateFormat(dataApi.dateTo)}
         </p>
         <p>{arrow} {resultAdole.length} adolescenti / {arrow} {resultAdult.length} adulti</p>

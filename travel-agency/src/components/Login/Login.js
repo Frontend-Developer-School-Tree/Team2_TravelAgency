@@ -31,7 +31,7 @@ function Login() {
       userLogin();
     }
     else{
-      alert("Dati Login non corretti!\n\nRiprova!");
+      alert("I dati inseriti non sono corretti!\n\nRiprova!");
     }
   };
 
