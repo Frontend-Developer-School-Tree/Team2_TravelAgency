@@ -53,3 +53,10 @@
   text-transform: uppercase;
   
 }
+
+.icona:active{
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);	 /* for IE  */
+  /*  for browsers supporting webkit (such as chrome, safari etc.). */
+  -webkit-transform: rotate(180deg);
+}
