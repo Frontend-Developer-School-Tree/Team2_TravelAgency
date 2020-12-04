@@ -50,4 +50,6 @@
 
 .accortionList .title {
   color: #0063C9;
+  text-transform: uppercase;
+  
 }

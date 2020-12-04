@@ -7,10 +7,11 @@ const AccordionList = () => {
 
   return (
     <div className="accortionList">
-      <AccordionInfo title={dataApi.documentsRequested.name}>
+
+      <AccordionInfo title={"Tariffe"}>
         <p>{dataApi.documentsRequested.description}</p>
       </AccordionInfo>
-      
+
       <AccordionInfo title={dataApi.documentsRequested.name}>
         <p>{dataApi.documentsRequested.description}</p>
       </AccordionInfo>

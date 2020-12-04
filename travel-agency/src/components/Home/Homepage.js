@@ -5,6 +5,7 @@ import CardMaps from "../Maps/CardMaps";
 import AccordionList from "../Accordion/AccordionList/AccordionList";
 import CardList from "../CardTest/CardList";
 import AgenteCard from "../Agente/AgenteCard";
+import Footer from "../Footer/Footer";
 
 const Homepage = () => {
   return (
@@ -16,6 +17,7 @@ const Homepage = () => {
         <Route path="miotour" element={<CardList/>} />
         <Route path="infotour" element={<AccordionList />} />
       </Routes>
+      <Footer/>
     </section>
   );
 };
