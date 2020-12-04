@@ -4,32 +4,34 @@ import logo from "../../img/logo.svg";
 import { ApiContext } from "../../ApiContext";
 import { Navigate } from "react-router-dom";
 
-const user = { username: `admin`, password: `admin` };
+const user = { username: "admin", password: "admin" };
 
 function Login() {
-  const [mail, setMail] = useState("");
-  const [password, setpassword] = useState("");
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const { userLogin, login } = React.useContext(ApiContext);
 
   function handleChange(event) {
     const name = event.target.name;
     const value = event.target.value;
-    if (name === "mail") {
-      setMail({ mail: value });
+
+    if (name === "username") {
+      setUsername({ username: value });
     }
     if (name === "password") {
-      setpassword({ password: value });
+      setPassword({ password: value });
     }
   }
 
   const checkCredential = (event) => {
     event.preventDefault();
-    console.log(" bool ", mail === user.username && password === user.password)
-    /** è il controllo che da sempre false */
-    if (mail.mail === user.username && password.password === user.password) {
-      console.log("mail ", mail, " password ", password);
+    if (username.username === user.username && password.password === user.password) {
       userLogin();
+    }
+    else{
+      alert("Dati Login non corretti!\n\nRiprova!");
     }
   };
 
@@ -42,11 +44,11 @@ function Login() {
         </div>
         <div className="loginformdiv">
           <form onSubmit={checkCredential} noValidate className="loginform">
-            <label>Email</label>
+            <label>Username</label>
             <input
-              type="email"
-              name="mail"
-              placeholder="Email..."
+              type="text"
+              name="username"
+              placeholder="Username..."
               onChange={handleChange}
             />
             <label>Password</label>
