@@ -17,37 +17,37 @@ const CardMaps = () => {
 
   return (
     <section>
-    <MapContainer
-      className="map"
-      center={[mapPositions[0], mapPositions[1]]}
-      zoom={5}
-    >
-      <TileLayer
-        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {dataApi.rows.map((row) =>
-        row.places.map((places, i) => {
-          return (
-            <Marker
-              key={i}
-              position={[places.position.coords[0], places.position.coords[1]]}
-            >
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker>
-          );
-        })
-      )}
-    </MapContainer>
+      <MapContainer
+        className="map"
+        center={[mapPositions[0], mapPositions[1]]}
+        zoom={5}
+      >
+        <TileLayer
+          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {dataApi.rows.map((row) =>
+          row.places.map((places, i) => {
+            return (
+              <Marker
+                key={i}
+                position={[
+                  places.position.coords[0],
+                  places.position.coords[1],
+                ]}
+              >
+                <Popup>
+                  A pretty CSS3 popup. <br /> Easily customizable.
+                </Popup>
+              </Marker>
+            );
+          })
+        )}
+      </MapContainer>
 
-
-    <h2>{dataApi.title}</h2>
-    <p>{dataApi.days} Giorni</p>
+      <h2>{dataApi.title}</h2>
+      <p>{dataApi.days} Giorni</p>
     </section>
-    
-    
   );
 };
 
