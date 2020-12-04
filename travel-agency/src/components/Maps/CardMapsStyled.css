@@ -28,3 +28,8 @@ div.mapCard p {
     color: grey;
     
 }
+
+strong {
+    color: grey;
+    font-size: 1.2rem;
+}

@@ -3,12 +3,13 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./CardMapsStyled.css";
 import { ApiContext } from "../../ApiContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowRight
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
+const dateFormat = (datain) => {
+  return datain.split('-').reverse().join('/');
+}
 
-
+const itinerario = [];
 
 const CardMaps = () => {
   
@@ -17,6 +18,7 @@ const CardMaps = () => {
 
   const mapPositions = [41.2925, 12.5736];
   const arrow = <FontAwesomeIcon icon={faArrowRight} style={{color:"orange"}} />;
+
   const resultAdult = dataApi.partecipants.filter((elem) => {
     if (elem.type === "adulto") return true;
   });
@@ -24,8 +26,6 @@ const CardMaps = () => {
   const resultAdole = dataApi.partecipants.filter((elem) => {
     if (elem.type === "adolescenti") return true;
   });
-
-
 
   return (
     <div className="mapCard">
@@ -41,6 +41,7 @@ const CardMaps = () => {
           />
           {dataApi.rows.map((row) =>
             row.places.map((places, i) => {
+              if(!itinerario.includes(places.name)){ itinerario.push(places.name) }
               return (
                 <Marker
                   key={i}
@@ -57,10 +58,10 @@ const CardMaps = () => {
             })
           )}
         </MapContainer>
-
+              
         <h2  className="TitoloMaps">{dataApi.title}</h2>
-        
-          <p> {arrow} Dal {dataApi.dateFrom} al {dataApi.dateTo}
+          {itinerario.map( place => <strong >{place} {' > '}</strong>)}
+          <p> {arrow} Dal {dateFormat(dataApi.dateFrom)} al {dateFormat(dataApi.dateTo)}
         </p>
         <p>{arrow} {resultAdole.length} adolescenti / {arrow} {resultAdult.length} adulti</p>
         <p>{arrow} {dataApi.days} Giorni / {dataApi.days - 1} Notti</p>
@@ -70,3 +71,4 @@ const CardMaps = () => {
 };
 
 export default CardMaps;
+
