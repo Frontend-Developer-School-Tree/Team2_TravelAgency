@@ -1,6 +1,7 @@
 import React from "react";
 import { ApiContext } from "../../../ApiContext";
 import AccordionInfo from "../AccordionInfo/AccordionInfo";
+import AccordionTariffe from "../AccordionInfo/AccordionTariffe";
 
 const AccordionList = () => {
   const {dataApi} = React.useContext(ApiContext);
@@ -8,9 +9,11 @@ const AccordionList = () => {
   return (
     <div className="accortionList">
 
-      <AccordionInfo title={"Tariffe"}>
+      {/* <AccordionInfo title={"Tariffe"}>
         <p>{dataApi.documentsRequested.description}</p>
-      </AccordionInfo>
+      </AccordionInfo> */}
+
+      <AccordionTariffe/>
 
       <AccordionInfo title={dataApi.documentsRequested.name}>
         <p>{dataApi.documentsRequested.description}</p>

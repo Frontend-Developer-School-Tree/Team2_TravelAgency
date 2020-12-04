@@ -1,0 +1,4 @@
+.personeTariffe {
+  display: flex;
+  justify-content: space-between;
+}
