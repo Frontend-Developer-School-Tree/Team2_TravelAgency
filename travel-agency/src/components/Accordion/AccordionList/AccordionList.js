@@ -6,7 +6,11 @@ const AccordionList = () => {
   const {dataApi} = React.useContext(ApiContext);
 
   return (
-    <div>
+    <div className="accortionList">
+      <AccordionInfo title={dataApi.documentsRequested.name}>
+        <p>{dataApi.documentsRequested.description}</p>
+      </AccordionInfo>
+      
       <AccordionInfo title={dataApi.documentsRequested.name}>
         <p>{dataApi.documentsRequested.description}</p>
       </AccordionInfo>

@@ -10,17 +10,19 @@ import AccordionInfo from '../Accordion/AccordionInfo/AccordionInfo';
 
 function CardList() {
     const { dataApi } = React.useContext(ApiContext);
-
+    console.log(dataApi);
     dataApi.rows.map( riga => {
-        console.log(riga);
+        // console.log(riga);
         
     })
     
     return (
         <div className="cardItems">
-            <AccordionInfo children={
-                <CardItem titolo={"SIRACUSA"} luogo={"SIRACUSA"} nome={"days.name"} data={"dayDate"}/>
-            }/>
+            <AccordionInfo title={"SIRACUSA"}
+            children={
+                <CardItem  luogo={"SIRACUSA"} nome={"days.name"} data={"dayDate"}/>
+            }
+            />
             
         </div>
     )
