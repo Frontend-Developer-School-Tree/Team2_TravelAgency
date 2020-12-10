@@ -17,15 +17,18 @@ export class CardItem extends Component {
                 <div className="cardHeader">
                     <p>{this.props.titolo}  <span>datainizio - datafine mese</span></p>
                 </div>
+                <hr></hr>
                 <div className="cardBody">
-                    <p>{this.props.luogo}</p>
                     <div>
                         <span>{this.props.nome}</span> <span>{this.props.data}</span>
                         <div>
-                            {/* <img/> */}
+                            {/* img */}
+                            <p>{this.props.descrizione}</p>
+                        </div>
+                        <div>
+
                         </div>
                     </div>
-
                 </div>
             </div>
         )
