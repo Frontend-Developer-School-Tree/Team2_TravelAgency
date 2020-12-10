@@ -48,7 +48,7 @@ export class CardItem extends Component {
                             <p>{this.props.descrizione}</p>
                         </div>
                         <div>
-                            <div>mettere box colorato con auto</div>
+                            {/* <div>mettere box colorato con auto</div> */}
                             {trasporto &&
                                 <ModalComponents
                                     props={
