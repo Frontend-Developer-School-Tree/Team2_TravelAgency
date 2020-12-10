@@ -20,49 +20,41 @@ function CardList() {
 
     return (
         <div className="cardItems">
-            <h2>---</h2>
             {
                 dataApi.rows.map( riga =>{
                     const name  = riga.places.map(el => el.name );
-                    console.log(riga);
+                    const transports  = riga.transports.map(el => el);
+                    const pernottamento  = riga.accomodations.map(el => el);
+                    console.log(name);
                     return(
                         <>
-                        <AccordionInfo
+                        <AccordionInfo title={name}
+
                         children={
                             riga.days.map(giorno => {
+                                const imgurl  = giorno.images.map(el => el.image );                                
                                 return(
-                                    <CardItem  luogo={"luogo"}
-                                                titolo={name} 
+                                    <CardItem   titolo={name} 
                                                 nome={giorno.name}
                                                 data={dateFormat(riga.dayDate)}
                                                 descrizione={riga.days[0].description}
+                                                img={imgurl}
+                                                pernottamento={pernottamento}
+                                                trasporto={transports}
+                                                incluso={riga.included}
+                                                escluso={riga.notIncluded}
                                     />
     
                                 )
                             })
 
                         }
-                        // {
-                        // }
                         />
-                        <h2>****</h2>
                         </>
                     ) 
                     
                 })
             }
-
-
-                    {/* <AccordionInfo title={"SIRACUSA"}
-                    children={ 
-                    <CardItem  luogo={"luogo"} nome={giorno.name} data={dateFormat(riga.dayDate)}
-                    descrizione={riga.days[0].description}
-                    />
-                    }
-                    
-                    /> */}
-                
-            <h2>---</h2>
         </div>
             
     )
