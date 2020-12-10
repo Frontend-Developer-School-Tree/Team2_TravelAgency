@@ -40,7 +40,7 @@ export class CardItem extends Component {
                 <div className="cardBody">
                     <div>
                         <h5>{this.props.titolo}</h5>
-                        <span>{this.props.nome}</span> <span>{this.props.data}</span>
+                        <span ><strong className='text-yellow' >{this.props.nome}</strong></span> <span className='text-grey'> {this.props.data}</span>
                         <div>
                             <img className='img-primary' src={this.props.img} alt="img"/>
                             <p>{this.props.descrizione}</p>
