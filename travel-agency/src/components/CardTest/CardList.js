@@ -12,22 +12,23 @@ const dateFormat = (datain) => {
 
 function CardList() {
     const { dataApi } = React.useContext(ApiContext);
-
+    
     return (
         <div className="cardItems">
             {
                 dataApi.rows.map( riga =>{
                     const name  = riga.places.map(el => el.name );
+                    
                     const transports  = riga.transports.map(el => el);
                     const pernottamento  = riga.accomodations.map(el => el);
-                    console.log(name);
+                    {/* console.log(name); */}
                     return(
                         <>
                         <AccordionInfo title={name}
 
                         children={
                             riga.days.map(giorno => {
-                                const imgurl  = giorno.images.map(el => el.image );                                
+                                const imgurl  = giorno.images.map(el => el.image ); 
                                 return(
                                     <CardItem   titolo={name} 
                                                 nome={giorno.name}
@@ -47,12 +48,10 @@ function CardList() {
                         />
                         </>
                     ) 
-                    
                 })
             }
         </div>
             
     )
 }
-
 export default CardList
