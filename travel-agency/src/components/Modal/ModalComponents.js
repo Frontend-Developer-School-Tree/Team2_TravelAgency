@@ -10,7 +10,7 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        height: '100vh',
+        maxHeight: '100vh',
         fontSize: '1.3rem'
     }
 };

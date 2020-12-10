@@ -1,6 +1,7 @@
 import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react'
 import ModalComponents from '../Modal/ModalComponents';
+import './CardItem.css'
 
 const dateFormat = (datain) => {
     return datain.split('-').reverse().join('/');
