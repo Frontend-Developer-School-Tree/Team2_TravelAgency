@@ -7,21 +7,21 @@ import AccordionInfo from '../Accordion/AccordionInfo/AccordionInfo';
 
 const dateFormat = (datain) => {
     return datain.split('-').reverse().join('/');
-  }
+}
 
 
 function CardList() {
     const { dataApi } = React.useContext(ApiContext);
-    const cardArray= [];
+    const cardArray = [];
     const places = [];
     const occorrenze = [];
-    let previous=dataApi.rows[0].places[0].name, counter=0, dim=dataApi.rows.length; 
+    let previous = dataApi.rows[0].places[0].name, counter = 0, dim = dataApi.rows.length;
 
-    dataApi.rows.map( riga =>{
-        const name  = riga.places.map(el => {
-            if(previous === el.name){
+    dataApi.rows.map(riga => {
+        const name = riga.places.map(el => {
+            if (previous === el.name) {
                 counter++;
-            } else{
+            } else {
                 occorrenze.push(counter);
                 places.push(previous);
                 counter=1;
@@ -31,30 +31,30 @@ function CardList() {
             if(dim === 0){ occorrenze.push(counter); places.push(previous);}
             return el.name;
         });
-        const transports  = riga.transports.map(el => el);
-        const pernottamento  = riga.accomodations.map(el => el);
+        const transports = riga.transports.map(el => el);
+        const pernottamento = riga.accomodations.map(el => el);
 
-        return(
+        return (
             riga.days.map(giorno => {
-                const imgurl  = giorno.images.map(el => el.image );                                
-                return(
+                const imgurl = giorno.images.map(el => el.image);
+                return (
                     cardArray.push(
-                        <CardItem   titolo={name} 
-                                nome={giorno.name}
-                                data={dateFormat(riga.dayDate)}
-                                descrizione={riga.days[0].description}
-                                img={imgurl}
-                                pernottamento={pernottamento}
-                                trasporto={transports}
-                                incluso={riga.included}
-                                escluso={riga.notIncluded}
-                    />
+                        <CardItem titolo={name}
+                            nome={giorno.name}
+                            data={dateFormat(riga.dayDate)}
+                            descrizione={riga.days[0].description}
+                            img={imgurl}
+                            pernottamento={pernottamento}
+                            trasporto={transports}
+                            incluso={riga.included}
+                            escluso={riga.notIncluded}
+                        />
                     )
 
                 )
             })
-        ) 
-        
+        )
+
     })
     
     function compo(num){
