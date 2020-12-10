@@ -23,12 +23,12 @@ function CardList() {
                 counter++;
             } else{
                 occorrenze.push(counter);
+                places.push(previous);
                 counter=1;
                 previous = el.name;
             }
             dim--;
-            if(dim === 0) occorrenze.push(counter);
-            if(!places.includes(el.name)){ places.push(el.name) };
+            if(dim === 0){ occorrenze.push(counter); places.push(previous);}
             return el.name;
         });
         const transports  = riga.transports.map(el => el);
@@ -56,78 +56,32 @@ function CardList() {
         ) 
         
     })
-  
+    
+    function compo(num){
+        let index=0;
+        return cardArray.splice(index, num);
+    }
+
     return (
         <div>
             {
-            places.map( nome => {
-                let cnt =occorrenze.length;
-                return(
-                    <>
-                    <AccordionInfo title={nome.toUpperCase()}
-    
-                        children={
-                            cardArray.map((elem, index) => {
-                                if(elem.props.titolo[0] === nome ){
-                                    if(cnt < cardArray.length){
-                                        return cardArray[index];
-                                        // console.log(cardArray[cnt].props.titolo, "  ", cnt, " ", dt);
-                                    }
-                                }
-                                cnt =index;
-                            })
-                        }
-                        />
-                    </>
-                )
-               
-            })
+                occorrenze.map((num, i) => {
+                    return(
+                        <>
+                        <AccordionInfo title={places[i].toUpperCase()}
+
+                            children={
+                                    compo(num)
+                            }
+                            />
+                        </>
+                    )
+                })
+
         }
 
         </div>
     )
-
-    // return (
-    //     <div className="cardItems">
-    //         {
-    //             dataApi.rows.map( riga =>{
-    //                 const name  = riga.places.map(el => el.name );
-    //                 const transports  = riga.transports.map(el => el);
-    //                 const pernottamento  = riga.accomodations.map(el => el);
-    //                 // console.log(name);
-                
-    //                 return(
-    //                     <>
-    //                     <AccordionInfo title={name}
-
-    //                     children={
-    //                         riga.days.map(giorno => {
-    //                             const imgurl  = giorno.images.map(el => el.image );                                
-    //                             return(
-    //                                 <CardItem   titolo={name} 
-    //                                             nome={giorno.name}
-    //                                             data={dateFormat(riga.dayDate)}
-    //                                             descrizione={riga.days[0].description}
-    //                                             img={imgurl}
-    //                                             pernottamento={pernottamento}
-    //                                             trasporto={transports}
-    //                                             incluso={riga.included}
-    //                                             escluso={riga.notIncluded}
-    //                                 />
-    
-    //                             )
-    //                         })
-
-    //                     }
-    //                     />
-    //                     </>
-    //                 ) 
-                    
-    //             })
-    //         }
-    //     </div>
-            
-    // )
 }
 
 export default CardList
