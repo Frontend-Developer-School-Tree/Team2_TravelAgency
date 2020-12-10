@@ -56,7 +56,7 @@ function CardList() {
         ) 
         
     })
-  
+
     return (
         <div>
             {
@@ -80,7 +80,6 @@ function CardList() {
                         />
                     </>
                 )
-               
             })
         }
 
