@@ -74,6 +74,12 @@ export class CardItem extends Component {
                                     </ModalComponents>
                             }
                             {this.state.hotel &&
+                                <>
+                                 {this.state.immagini &&
+                                     <div>
+                                         <img src={this.state.immagini.image} alt={this.state.immagini.image_name}/>
+                                     </div>
+                                 }
                                  <ModalComponents
                                     props={
                                         <>
@@ -95,18 +101,12 @@ export class CardItem extends Component {
                                     }
                                     >
                                     <div className="pernottamento">
-                                        hotel
-                                        
-                                        {this.state.immagini &&
-                                            <div>
-                                                <img src={this.state.immagini.image} alt={this.state.immagini.image_name}/>
-                                            </div>
-                                        }
                                         <h3>{this.state.hotel.name}</h3>
                                         <span>{this.state.hotel.description}</span>
                                         <span>Clicca qui per maggiori dettagli</span>
                                     </div>
                                </ModalComponents>
+                                    </>
                             }
                             <span>{this.props.incluso}</span>
                             {this.props.escluso!=null && <span> {this.props.escluso}</span>}
