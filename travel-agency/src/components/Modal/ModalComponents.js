@@ -6,7 +6,7 @@ const customStyles = {
     content: {
         top: '50%',
         left: '50%',
-        right: 'auto',
+        right: '30%',
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)'
@@ -14,29 +14,23 @@ const customStyles = {
 };
 
 
-const ModalComponents = () => {
+const ModalComponents = ({children, props}) => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
-    function openModal() {
-        setIsOpen(true);
-    }
 
-    function closeModal() {
-        setIsOpen(false);
-    }
     return (
-        <div>
-            <button onClick={openModal}>Open Modal</button>
+        <div onClick={() => setIsOpen(modalIsOpen => !modalIsOpen)}>
             <Modal
                 isOpen={modalIsOpen}
-                onRequestClose={closeModal}
+                onRequestClose={() => setIsOpen(modalIsOpen => modalIsOpen)}
                 style={customStyles}
                 contentLabel="Example Modal"
             >
 
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
+                <button onClick={() => setIsOpen(modalIsOpen => modalIsOpen)}>close</button>
+                { modalIsOpen &&  <div> {props}</div> }
                 
             </Modal>
+            <span>{children}</span>
         </div>
     )
 }

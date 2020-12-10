@@ -4,9 +4,6 @@ import CardItem from './CardItem';
 import "../Accordion/AccordionInfo/AccordionInfoStyles.css"
 import AccordionInfo from '../Accordion/AccordionInfo/AccordionInfo';
 
-/**
- * titolo riga.places[0].name
- */
 
 const dateFormat = (datain) => {
     return datain.split('-').reverse().join('/');
@@ -15,8 +12,6 @@ const dateFormat = (datain) => {
 
 function CardList() {
     const { dataApi } = React.useContext(ApiContext);
-
-    // console.log(dataApi);
 
     return (
         <div className="cardItems">

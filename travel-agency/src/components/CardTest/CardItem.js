@@ -1,4 +1,11 @@
+import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react'
+import ModalComponents from '../Modal/ModalComponents';
+
+const dateFormat = (datain) => {
+    return datain.split('-').reverse().join('/');
+  }
+
 
 export class CardItem extends Component {
     constructor(props) {
@@ -6,22 +13,27 @@ export class CardItem extends Component {
     
         this.state = {
             immagini:{},
-            hotel:{},
+            hotel:{
+                name:"default",
+                description:"default",
+            },
         }
     }
     
     componentDidMount(){
-        this.setState({hotel: [...this.props.pernottamento] });
-        
-        if(this.state.hotel !== undefined) this.setState({immagini: this.state.hotel.images})
+        const [hotel] = [...this.props.pernottamento];
+        let [images]=[]; 
+        if(hotel !== undefined){
+            [images] = [...hotel.images];
+        }
+
+        this.setState({hotel: hotel, immagini: images});
     }
     
     render() {
-        const [trasporto]  =[...this.props.trasporto];
+        const [trasporto]  = [...this.props.trasporto];
         
-        
-        console.log("hotel " , this.state.hotel );
-        // usare trasporto per il contenuto della modal per la sezione noleggio
+        console.log("hotel ", this.state.hotel);
         return (
             <>
                 <div className="cardBody">
@@ -33,26 +45,68 @@ export class CardItem extends Component {
                             <p>{this.props.descrizione}</p>
                         </div>
                         <div>
-                            <div>box colorato con auto</div>
+                            <div>mettere box colorato con auto</div>
                             {trasporto &&
-                                <div className="noleggioauto">
-                                    <h3>{trasporto.name}</h3>
-                                    <span>LUOGO DI RITIRO</span> <span>{trasporto.pickup.name}</span><br></br>
-                                    <span>LUOGO DI RILASCIO</span> <span>{trasporto.return.name}</span>
-                                </div>
+                                    <ModalComponents
+                                        props={
+                                            <>
+                                                <h3>{trasporto.name}</h3>
+                                                <hr></hr>
+                                                <p>icona auto</p>
+                                                <p>TIPOLOGIA AUTO</p>
+                                                <span>LUOGO DI RITIRO</span> <span>{trasporto.pickup.name}</span><br></br>
+                                                <span>DATA DI RITIRO</span> <span>{dateFormat(trasporto.withdrawalDate)}</span><br></br>
+                                                <span>LUOGO DI RILASCIO</span> <span>{trasporto.return.name}</span><br></br>
+                                                <span>DATA DI RILASCIO</span> <span>{dateFormat(trasporto.releaseDate)}</span>
+                                                <p>IL NOLEGGIO AUTO COMPRENDE</p>
+                                                <p>{trasporto.rentIncluded}</p>
+                                                <span>SITO WEB </span>
+                                                <span>{trasporto.contact.website}</span>
+                                            </>
+                                        }
+                                        >
+                                    <div className="noleggioauto" >
+                                        <h3>{trasporto.name}</h3>
+                                        <span>LUOGO DI RITIRO</span> <span>{trasporto.pickup.name}</span><br></br>
+                                        <span>LUOGO DI RILASCIO</span> <span>{trasporto.return.name}</span>
+                                            
+                                    </div>
+                                    </ModalComponents>
                             }
                             {this.state.hotel &&
-                                <div className="pernottamento">
-                                    hotel
-                                    
-                                    {this.state.immagini &&
-                                        <div>
+                                 <ModalComponents
+                                    props={
+                                        <>
+                                            <h3>{this.state.hotel.name}</h3>
+                                            <hr></hr>
+                                            <p>Hotel</p> <span>Stelle</span>
+                                            <div>
                                             <img src={this.state.immagini.image} alt={this.state.immagini.image_name}/>
-                                        </div>
+                                            </div>
+                                            <h4>DESCRIZIONE</h4> 
+                                            <span>{this.state.hotel.description}</span>
+                                            <h4>RISTORANTE</h4>
+                                            <span>{this.state.hotel.descriptionRestaurant}</span>
+                                            <h4>CAMERE</h4> 
+                                            <span>{this.state.hotel.descriptionRooms}</span>
+                                            <h4>SERVIZI</h4>
+                                            <span>{this.state.hotel.descriptionServices}</span>
+                                        </>
                                     }
-                                    <h3>{this.state.hotel.name}</h3>
-                                    <span>{this.state.hotel.description}</span>
-                                </div>
+                                    >
+                                    <div className="pernottamento">
+                                        hotel
+                                        
+                                        {this.state.immagini &&
+                                            <div>
+                                                <img src={this.state.immagini.image} alt={this.state.immagini.image_name}/>
+                                            </div>
+                                        }
+                                        <h3>{this.state.hotel.name}</h3>
+                                        <span>{this.state.hotel.description}</span>
+                                        <span>Clicca qui per maggiori dettagli</span>
+                                    </div>
+                               </ModalComponents>
                             }
                             <span>{this.props.incluso}</span>
                             {this.props.escluso!=null && <span> {this.props.escluso}</span>}
