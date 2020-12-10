@@ -9,7 +9,9 @@ const customStyles = {
         right: '30%',
         bottom: 'auto',
         marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
+        transform: 'translate(-50%, -50%)',
+        maxHeight: '100vh',
+        fontSize: '1.3rem'
     }
 };
 

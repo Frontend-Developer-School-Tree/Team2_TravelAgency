@@ -1,6 +1,7 @@
 import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import React, { Component } from 'react'
 import ModalComponents from '../Modal/ModalComponents';
+import './CardItem.css'
 
 const dateFormat = (datain) => {
     return datain.split('-').reverse().join('/');
@@ -39,9 +40,9 @@ export class CardItem extends Component {
                 <div className="cardBody">
                     <div>
                         <h5>{this.props.titolo}</h5>
-                        <span>{this.props.nome}</span> <span>{this.props.data}</span>
+                        <span ><strong className='text-yellow' >{this.props.nome}</strong></span> <span className='text-grey'> {this.props.data}</span>
                         <div>
-                            <img src={this.props.img} alt="img"/>
+                            <img className='img-primary' src={this.props.img} alt="img"/>
                             <p>{this.props.descrizione}</p>
                         </div>
                         <div>
@@ -77,7 +78,7 @@ export class CardItem extends Component {
                                 <>
                                  {this.state.immagini &&
                                      <div>
-                                         <img src={this.state.immagini.image} alt={this.state.immagini.image_name}/>
+                                         <img className='img-secondary' src={this.state.immagini.image} alt={this.state.immagini.image_name}/>
                                      </div>
                                  }
                                  <ModalComponents
@@ -87,7 +88,7 @@ export class CardItem extends Component {
                                             <hr></hr>
                                             <p>Hotel</p> <span>Stelle</span>
                                             <div>
-                                            <img src={this.state.immagini.image} alt={this.state.immagini.image_name}/>
+                                            <img className='img-primary' src={this.state.immagini.image} alt={this.state.immagini.image_name}/>
                                             </div>
                                             <h4>DESCRIZIONE</h4> 
                                             <span>{this.state.hotel.description}</span>
