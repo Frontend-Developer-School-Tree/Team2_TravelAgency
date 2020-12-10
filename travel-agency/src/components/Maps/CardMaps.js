@@ -24,10 +24,11 @@ const CardMaps = () => {
   });
 
   const resultAdole = dataApi.partecipants.filter((elem) => {
-    if (elem.type === "adolescenti") return true;
+    if (elem.type === "adolescente") return true;
   });
 
   return (
+
     <div className="mapCard">
       <section>
         <MapContainer
