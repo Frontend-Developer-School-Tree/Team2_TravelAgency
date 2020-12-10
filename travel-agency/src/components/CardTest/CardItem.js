@@ -5,9 +5,8 @@ export class CardItem extends Component {
         super(props)
     
         this.state = {
-             titolo:'',
-             dateTitolo:'',
-
+            titolo:'',
+            dateTitolo:'',
         }
     }
     
@@ -15,7 +14,7 @@ export class CardItem extends Component {
         return (
             <div>
                 <div className="cardHeader">
-                    <p>{this.props.titolo}  <span>datainizio - datafine mese</span></p>
+                    <p>{this.props.titolo}  <span>data inizio - data fine mese</span></p>
                 </div>
                 <div className="cardBody">
                     <p>{this.props.luogo}</p>
@@ -25,7 +24,6 @@ export class CardItem extends Component {
                             {/* <img/> */}
                         </div>
                     </div>
-
                 </div>
             </div>
         )
